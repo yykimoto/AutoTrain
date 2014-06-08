@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.github.yykimoto.autotrains;
 
 import net.minecraft.init.Blocks;
 import cpw.mods.fml.common.Mod;
