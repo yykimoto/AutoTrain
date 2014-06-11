@@ -6,25 +6,17 @@ import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityWayLoader extends TileEntity {
 
-	public String[] stations;
-	public String stationsString;
+	public String route;
 
 	@Override
 	public void readFromNBT(NBTTagCompound nbtTagCompound) {
 		super.readFromNBT(nbtTagCompound);
-		stationsString = nbtTagCompound.getString("stations");
-		stations = stationsString.split("\n");
+		route = nbtTagCompound.getString("stations");
 	}
 
 	@Override
 	public void writeToNBT(NBTTagCompound nbtTagCompound) {
 		super.writeToNBT(nbtTagCompound);
-		StringBuilder sb = new StringBuilder();
-		for (String station : stations) {
-			sb.append("/n");
-			sb.append(station);
-		}
-		stationsString = sb.toString().replaceFirst("\n", "");
-		nbtTagCompound.setString("stations", stationsString);
+		nbtTagCompound.setString("stations", route);
 	}
 }
