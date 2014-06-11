@@ -1,6 +1,5 @@
 package com.github.yykimoto.autotrains;
 
-import com.github.yykimoto.autotrains.block.BlockStation;
 import com.github.yykimoto.autotrains.block.BlockSwitchRail;
 import com.github.yykimoto.autotrains.block.BlockWayLoader;
 
@@ -18,16 +17,12 @@ public class AutoTrainsMain {
 	public static final String VERSION = "for 1.7.2 a";
 
 	public static Block blockSwitch;
-	public static Block blockStation;
 	public static Block blockWayLoader;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		blockSwitch = new BlockSwitchRail();
 		GameRegistry.registerBlock(blockSwitch, "rail");
-
-		blockStation = new BlockStation();
-		GameRegistry.registerBlock(blockStation, "station");
 
 		blockWayLoader = new BlockWayLoader();
 		GameRegistry.registerBlock(blockWayLoader, "wayloader");
